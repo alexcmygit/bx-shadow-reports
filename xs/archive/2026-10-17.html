@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BX XS-trend — daily report 2026-10-17</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--fg:#e6e9ef;--mut:#9aa4b2;--line:#262b36;
+--accent:#5eead4;--warn:#fbbf24;--bad:#f87171;--good:#4ade80}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 20px 64px}
+header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:8px}
+h1{font-size:24px;margin:0 0 6px}
+.sub{color:var(--mut);font-size:13px}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;
+font-weight:600;border:1px solid var(--line);margin-right:6px}
+.pill.ok{color:var(--good);border-color:#1f4d33;background:#0e2418}
+.pill.bad{color:var(--bad);border-color:#5a2727;background:#2a1212}
+.pill.warn{color:var(--warn);border-color:#5a4620;background:#2a2110}
+h2{font-size:17px;margin:30px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px}
+table{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:13.5px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+tr:hover td{background:#1b1f28}
+code{background:#222734;padding:1px 5px;border-radius:4px;font-size:12.5px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:10px 0;padding:8px 14px;border-left:3px solid var(--line);
+color:var(--mut);font-size:13.5px}
+ul{margin:8px 0 14px;padding-left:22px}
+li{margin:3px 0}
+a{color:var(--accent)}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--mut);font-size:12.5px}
+</style></head>
+<body><div class="wrap">
+<header>
+  <h1>BX XS-trend — daily report</h1>
+  <div class="sub">2026-10-17 · generated 2026-10-17 00:54 HKT · <span class="pill ok">worker online</span> <span class="pill warn">2 warning(s)</span> <a class="pill" style="text-decoration:none;color:#5eead4" href="live.html">live book →</a></div>
+</header>
+
+<p><em>Generated 2026-10-17 00:54 HKT. Shadow run, no orders. Service <code>bx-xs</code>. Source: the worker&#x27;s durable bucket record.</em></p>
+<h2>1. Service &amp; liveness</h2>
+<ul><li><strong>heartbeat</strong>: 0 min ago (FRESH)</li><li><strong>equity</strong>: 1.0 (capital $7,000)</li><li><strong>open legs</strong>: 12 · <strong>closed legs</strong>: 0 · <strong>win rate</strong>: None</li><li><strong>universe</strong>: 174 coins</li><li><strong>last rebalance</strong>: 2026-10-16T14:00:00+00:00</li><li><strong>next rebalance</strong>: 2026-10-19T14:00:00+00:00</li><li><strong>report clock</strong>: worker-heartbeat — ⚠️ local clock off by 0.1h</li></ul>
+<h2>2. Pre-registered gates (spec §5)</h2>
+<blockquote>Judged on the <strong>dry run only</strong> — backtest results do not count toward these.</blockquote>
+<table><thead><tr><th>#</th><th>gate</th><th>rule</th><th>value</th><th>state</th><th>needed</th></tr></thead><tbody><tr><td>1</td><td>execution parity</td><td>achieved price within 5bp of intended on &gt;=90% of legs</td><td>8.3% of 12 legs</td><td><strong>PENDING</strong></td><td>first 2 weeks</td></tr><tr><td>2</td><td>event/position parity</td><td>live rebalances match the backtest on &gt;=95%</td><td>—</td><td><strong>NOT MEASURED</strong></td><td>first 2 weeks</td></tr><tr><td>3</td><td>gross edge</td><td>mean gross/rebalance &gt; 0 over ~30 rebalances</td><td>—</td><td><strong>PENDING</strong></td><td>30 more rebalances</td></tr><tr><td>4</td><td>net edge</td><td>net %/day &gt; 0 over ~30 rebalances</td><td>+0.000 %/day (n=0)</td><td><strong>PENDING</strong></td><td>30 more rebalances</td></tr><tr><td>5</td><td>beats benchmark</td><td>net %/day &gt; 0.03 over ~60 rebalances</td><td>+0.000 %/day (n=0)</td><td><strong>PENDING</strong></td><td>60 more rebalances</td></tr><tr><td>6</td><td>kill condition</td><td>net %/day &lt; 0 after 60 rebalances =&gt; STOP</td><td>+0.000 %/day (n=0)</td><td><strong>ARMED</strong></td><td>60 more rebalances</td></tr></tbody></table>
+<p>Progress: <strong>1 rebalances recorded</strong>, <strong>0 settled</strong>. Gates 3–4 need ~30 settled (≈90 days); gates 5–6 need ~60 (≈180 days). This run is designed to take <strong>3–6 months</strong> to say anything.</p>
+<h2>3. Cumulative performance</h2>
+<table><thead><tr><th>metric</th><th>live</th><th>BX-113 backtest (funded)</th></tr></thead><tbody><tr><td>days</td><td>0.6</td><td>380</td></tr><tr><td>equity</td><td>1.0000</td><td>—</td></tr><tr><td><strong>net %/day</strong></td><td><strong>+0.000</strong></td><td>+0.192</td></tr><tr><td>CAGR</td><td>+0%</td><td>+102%</td></tr><tr><td>MaxDD</td><td>0.0%</td><td>-21.5%</td></tr><tr><td>Calmar</td><td>+nan</td><td>+3.26</td></tr></tbody></table>
+<blockquote>Measured on 833 heartbeat samples. <strong>MaxDD is sample-level</strong>, so intra-period excursions are missed. The backtest row is the reference this run exists to test — the spec carries <strong>no participation constraint</strong>, so live should be expected to come in <strong>below</strong> it (BX-125).</blockquote>
+<h2>4. Execution parity (gate #1)</h2>
+<ul><li>legs measured: <strong>12</strong></li><li>within 5bp of intended: <strong>8.3%</strong> (gate needs ≥90%)</li><li>mean absolute slippage: <strong>22.29 bp</strong></li><li>execution latency (boundary close → marks read): <strong>1 s</strong></li></ul>
+<blockquote><code>intended</code> = the boundary bar&#x27;s close (what the backtest fills at); <code>achieved</code> = the mark price when the worker executed. This is the number that says whether the strategy is even executable at the modelled price.</blockquote>
+<h2>5. Latest rebalance</h2>
+<ul><li>boundary bar: <code>2026-10-16T13:00:00+00:00</code> (closed 2026-10-16T14:00:00+00:00)</li><li>universe: 30 coins · scored 30 · quantiles [0.04116620323526719, -0.0012343855835712954]</li><li>gross: 2.0 · orders: 12 · cap-dropped: 0</li><li>mean slippage: 22.29 bp</li></ul>
+<table><thead><tr><th>leg</th><th>coin</th><th>weight</th><th>order $</th><th>entry (achieved)</th><th>slip bp</th></tr></thead><tbody><tr><td>LONG</td><td>NEAR</td><td>+0.1667</td><td>+1,167</td><td>5.2501</td><td>27.92</td></tr><tr><td>LONG</td><td>WLD</td><td>+0.1667</td><td>+1,167</td><td>0.53284</td><td>21.54</td></tr><tr><td>LONG</td><td>TAO</td><td>+0.1667</td><td>+1,167</td><td>286.17</td><td>24.05</td></tr><tr><td>LONG</td><td>ARB</td><td>+0.1667</td><td>+1,167</td><td>0.19917</td><td>38.51</td></tr><tr><td>LONG</td><td>VVV</td><td>+0.1667</td><td>+1,167</td><td>24.162</td><td>16.53</td></tr><tr><td>LONG</td><td>ZRO</td><td>+0.1667</td><td>+1,167</td><td>2.1743</td><td>23.40</td></tr><tr><td>SHORT</td><td>SOL</td><td>-0.1667</td><td>-1,167</td><td>105.67</td><td>14.22</td></tr><tr><td>SHORT</td><td>XRP</td><td>-0.1667</td><td>-1,167</td><td>1.3343</td><td>1.50</td></tr><tr><td>SHORT</td><td>PUMP</td><td>-0.1667</td><td>-1,167</td><td>0.004415</td><td>29.36</td></tr><tr><td>SHORT</td><td>STRK</td><td>-0.1667</td><td>-1,167</td><td>0.07599</td><td>34.10</td></tr><tr><td>SHORT</td><td>DOGE</td><td>-0.1667</td><td>-1,167</td><td>0.081551</td><td>6.74</td></tr><tr><td>SHORT</td><td>ADA</td><td>-0.1667</td><td>-1,167</td><td>0.22882</td><td>29.63</td></tr></tbody></table>
+<h2>6. Open positions</h2>
+<table><thead><tr><th>coin</th><th>side</th><th>weight</th><th>entry</th><th>opened</th><th>funding accrued</th></tr></thead><tbody><tr><td>ADA</td><td>SHORT</td><td>-0.1667</td><td>0.22882</td><td>2026-10-16T14:00:00</td><td>-0.0008%</td></tr><tr><td>ARB</td><td>LONG</td><td>+0.1667</td><td>0.19917</td><td>2026-10-16T14:00:00</td><td>-0.0002%</td></tr><tr><td>DOGE</td><td>SHORT</td><td>-0.1667</td><td>0.081551</td><td>2026-10-16T14:00:00</td><td>+0.0006%</td></tr><tr><td>NEAR</td><td>LONG</td><td>+0.1667</td><td>5.2501</td><td>2026-10-16T14:00:00</td><td>+0.0004%</td></tr><tr><td>PUMP</td><td>SHORT</td><td>-0.1667</td><td>0.004415</td><td>2026-10-16T14:00:00</td><td>+0.0006%</td></tr><tr><td>SOL</td><td>SHORT</td><td>-0.1667</td><td>105.67</td><td>2026-10-16T14:00:00</td><td>-0.0004%</td></tr><tr><td>STRK</td><td>SHORT</td><td>-0.1667</td><td>0.07599</td><td>2026-10-16T14:00:00</td><td>+0.0008%</td></tr><tr><td>TAO</td><td>LONG</td><td>+0.1667</td><td>286.17</td><td>2026-10-16T14:00:00</td><td>-0.0006%</td></tr><tr><td>VVV</td><td>LONG</td><td>+0.1667</td><td>24.162</td><td>2026-10-16T14:00:00</td><td>-0.0001%</td></tr><tr><td>WLD</td><td>LONG</td><td>+0.1667</td><td>0.53284</td><td>2026-10-16T14:00:00</td><td>-0.0006%</td></tr><tr><td>XRP</td><td>SHORT</td><td>-0.1667</td><td>1.3343</td><td>2026-10-16T14:00:00</td><td>+0.0005%</td></tr><tr><td>ZRO</td><td>LONG</td><td>+0.1667</td><td>2.1743</td><td>2026-10-16T14:00:00</td><td>-0.0006%</td></tr></tbody></table>
+<h2>7. Settled intervals (per-rebalance P&amp;L)</h2>
+<p><em>No settled interval yet.</em></p>
+<h2>8. Warnings / anomalies</h2>
+<ul><li>⚠️ local clock is 0.1h off real time (report time from worker-heartbeat) — launchd may fire at the wrong time.</li><li>⚠️ only 1 days of data — gate 3 needs ~90 days. Do not read anything into the P&amp;L yet (spec §5).</li></ul>
+<footer>
+  Cross-sectional trend dry run — <code>research/bx/XS-TREND-DRYRUN-SPEC.md</code>
+  (amendments A1/A2). Shadow only, no orders. Service <code>bx-xs</code>, snapshot
+  read-only. Updates daily ~06:00 HKT.
+  
+</footer>
+</div></body></html>
