@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BX XS-trend — daily report 2026-10-18</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--fg:#e6e9ef;--mut:#9aa4b2;--line:#262b36;
+--accent:#5eead4;--warn:#fbbf24;--bad:#f87171;--good:#4ade80}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 20px 64px}
+header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:8px}
+h1{font-size:24px;margin:0 0 6px}
+.sub{color:var(--mut);font-size:13px}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;
+font-weight:600;border:1px solid var(--line);margin-right:6px}
+.pill.ok{color:var(--good);border-color:#1f4d33;background:#0e2418}
+.pill.bad{color:var(--bad);border-color:#5a2727;background:#2a1212}
+.pill.warn{color:var(--warn);border-color:#5a4620;background:#2a2110}
+h2{font-size:17px;margin:30px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px}
+table{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:13.5px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+tr:hover td{background:#1b1f28}
+code{background:#222734;padding:1px 5px;border-radius:4px;font-size:12.5px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+blockquote{margin:10px 0;padding:8px 14px;border-left:3px solid var(--line);
+color:var(--mut);font-size:13.5px}
+ul{margin:8px 0 14px;padding-left:22px}
+li{margin:3px 0}
+a{color:var(--accent)}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--mut);font-size:12.5px}
+</style></head>
+<body><div class="wrap">
+<header>
+  <h1>BX XS-trend — daily report</h1>
+  <div class="sub">2026-10-18 · generated 2026-10-18 00:15 HKT · <span class="pill bad">worker stale</span> <span class="pill warn">2 warning(s)</span> <a class="pill" style="text-decoration:none;color:#5eead4" href="live.html">live book →</a></div>
+</header>
+
+<p><em>Generated 2026-10-18 00:15 HKT. Shadow run, no orders. Service <code>bx-xs</code>. Source: the worker&#x27;s durable bucket record.</em></p>
+<h2>1. Service &amp; liveness</h2>
+<ul><li><strong>heartbeat</strong>: — (STALE — investigate)</li><li><strong>equity</strong>: None (capital $7,000)</li><li><strong>open legs</strong>: None · <strong>closed legs</strong>: None · <strong>win rate</strong>: None</li><li><strong>universe</strong>: None coins</li><li><strong>last rebalance</strong>: None</li><li><strong>next rebalance</strong>: None</li><li><strong>report clock</strong>: local-clock(UNTRUSTED)</li></ul>
+<h2>2. Pre-registered gates (spec §5)</h2>
+<blockquote>Judged on the <strong>dry run only</strong> — backtest results do not count toward these.</blockquote>
+<table><thead><tr><th>#</th><th>gate</th><th>rule</th><th>value</th><th>state</th><th>needed</th></tr></thead><tbody><tr><td>1</td><td>execution parity</td><td>achieved price within 5bp of intended on &gt;=90% of legs</td><td>—</td><td><strong>PENDING</strong></td><td>first 2 weeks</td></tr><tr><td>2</td><td>event/position parity</td><td>live rebalances match the backtest on &gt;=95%</td><td>—</td><td><strong>NOT MEASURED</strong></td><td>first 2 weeks</td></tr><tr><td>3</td><td>gross edge</td><td>mean gross/rebalance &gt; 0 over ~30 rebalances</td><td>—</td><td><strong>PENDING</strong></td><td>30 more rebalances</td></tr><tr><td>4</td><td>net edge</td><td>net %/day &gt; 0 over ~30 rebalances</td><td>—</td><td><strong>PENDING</strong></td><td>30 more rebalances</td></tr><tr><td>5</td><td>beats benchmark</td><td>net %/day &gt; 0.03 over ~60 rebalances</td><td>—</td><td><strong>PENDING</strong></td><td>60 more rebalances</td></tr><tr><td>6</td><td>kill condition</td><td>net %/day &lt; 0 after 60 rebalances =&gt; STOP</td><td>—</td><td><strong>ARMED</strong></td><td>60 more rebalances</td></tr></tbody></table>
+<p>Progress: <strong>0 rebalances recorded</strong>, <strong>0 settled</strong>. Gates 3–4 need ~30 settled (≈90 days); gates 5–6 need ~60 (≈180 days). This run is designed to take <strong>3–6 months</strong> to say anything.</p>
+<h2>3. Cumulative performance</h2>
+<p><em>No equity samples yet.</em></p>
+<h2>4. Execution parity (gate #1)</h2>
+<p><em>No rebalance legs measured yet.</em></p>
+<h2>5. Latest rebalance</h2>
+<p><em>No rebalance yet. The first is due at the next 72h boundary.</em></p>
+<h2>6. Open positions</h2>
+<p><em>Flat (no open legs).</em></p>
+<h2>7. Settled intervals (per-rebalance P&amp;L)</h2>
+<p><em>No settled interval yet.</em></p>
+<h2>8. Warnings / anomalies</h2>
+<ul><li>⚠️ heartbeat missing — worker may be stalled.</li><li>⚠️ no rebalance recorded yet — the first one is due at the next 72h boundary; nothing is wrong before then.</li></ul>
+<footer>
+  Cross-sectional trend dry run — <code>research/bx/XS-TREND-DRYRUN-SPEC.md</code>
+  (amendments A1/A2). Shadow only, no orders. Service <code>bx-xs</code>, snapshot
+  read-only. Updates daily ~06:00 HKT.
+  
+</footer>
+</div></body></html>
